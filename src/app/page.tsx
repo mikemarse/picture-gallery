@@ -17,8 +17,6 @@ export default async function HomePage() {
 
 	const posts = await db.query.posts.findMany();
 
-	console.log(posts);
-
   return (
 		<main className="p-4">
 			<div className="flex flex-wrap gap-4">
