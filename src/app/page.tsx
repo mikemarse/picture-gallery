@@ -12,7 +12,7 @@ export default async function HomePage() {
   return (
 		<main className="p-4">
 			<div className="flex flex-wrap gap-4">
-				{[...images, ...images, ...images].map((post) => (<div className="w-48 flex flex-col" key={post.id}>{
+				{images.map((post) => (<div className="w-48 flex flex-col" key={post.id}>{
 					<div className="flex flex-col gap-1">
 						<img src={post.url}/>
 						<div>{post.name}</div>
