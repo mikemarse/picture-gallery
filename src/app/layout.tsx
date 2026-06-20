@@ -1,4 +1,5 @@
 import "~/styles/globals.css";
+import "@uploadthing/react/styles.css";
 
 import { ClerkProvider } from "@clerk/nextjs";
 
@@ -17,18 +18,20 @@ const geist = Geist({
   variable: "--font-geist-sans",
 });
 
-
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-		<ClerkProvider>
-			<html lang="en" className={`font-sans ${geist.variable} flex flex-col gap-4`}>
-				<body>
-					<TopNav />
-					{children}
-				</body>
-			</html>
-		</ClerkProvider>
+    <ClerkProvider>
+      <html
+        lang="en"
+        className={`font-sans ${geist.variable} flex flex-col gap-4`}
+      >
+        <body>
+          <TopNav />
+          {children}
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
