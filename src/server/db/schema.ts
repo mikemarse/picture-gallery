@@ -16,7 +16,8 @@ export const images = createTable(
   (d) => ({
     id: d.integer().primaryKey().generatedByDefaultAsIdentity(),
     name: d.varchar({ length: 256 }).notNull(),
-		url: d.varchar({ length: 1025 }).notNull(),
+    url: d.varchar({ length: 1025 }).notNull(),
+    userId: d.varchar("userId", { length: 256 }).notNull(),
     createdAt: d
       .timestamp({ withTimezone: true })
       .$defaultFn(() => /* @__PURE__ */ new Date())
